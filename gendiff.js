@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { Command } from 'commander'
+import parseFile from './src/parsers.js'
 
 const program = new Command()
 
@@ -10,9 +11,16 @@ program
   .helpOption('-h, --help', 'display help for command')
   .option('-f, --format [type]', 'output format')
   .arguments('<filepath1> <filepath2>', 'paths')
+  .action((filepath1, filepath2) => {
+    const data1 = parseFile(filepath1)
+    const data2 = parseFile(filepath2)
+    console.log(data1, data2)
+  })
 
 program.parse(process.argv)
 
 if (process.argv.length === 2) {
   program.help()
 }
+
+console.log(process.cwd())
