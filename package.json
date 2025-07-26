@@ -8,7 +8,9 @@
   },
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -26,5 +28,13 @@
     "commander": "^14.0.0",
     "eslint": "^9.31.0",
     "jest": "^30.0.4"
+  },
+  "jest": {
+    "transform": {},
+    "globals": {
+      "ts-jest": {
+        "useESM": true
+      }
+    }
   }
 }
