@@ -1,5 +1,6 @@
 import fs from 'fs'
 import path from 'path'
+import yaml from 'js-yaml' // Парсер для YAML
 
 // path.resolve - Сборка абсолютного пути файла
 // process.cwd() - Текущая рабочая директория
@@ -15,6 +16,11 @@ const parse = (data, ext) => {
   switch (ext) {
     case '.json':
       return JSON.parse(data)
+
+    case '.yaml':
+    case '.yml':
+      return yaml.load(data)
+
     default:
       throw new Error(`Unknown file extension: ${ext}`)
   }
@@ -25,3 +31,5 @@ export default (filepath) => {
   const ext = path.extname(filepath)
   return parse(data, ext)
 }
+
+// node gendiff.js ./__fixtures__/file1.yaml ./__fixtures__/file2.yaml

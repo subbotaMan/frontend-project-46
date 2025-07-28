@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/subbotaMan/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/subbotaMan/frontend-project-46/actions)",
   "main": "gendiff.js",
-  "bin" :{
+  "bin": {
     "gendiff": "./gendiff.js"
   },
   "type": "module",
@@ -23,18 +23,20 @@
   },
   "homepage": "https://github.com/subbotaMan/frontend-project-46#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.28.0",
     "@stylistic/eslint-plugin": "^5.2.1",
     "@typescript-eslint/eslint-plugin": "^8.37.0",
     "commander": "^14.0.0",
     "eslint": "^9.31.0",
-    "jest": "^30.0.4"
+    "jest": "^30.0.5",
+    "js-yaml": "^4.1.0"
   },
   "jest": {
     "transform": {},
-    "globals": {
-      "ts-jest": {
-        "useESM": true
-      }
-    }
+    "extensionsToTreatAsEsm": [],
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    },
+    "testEnvironment": "node"
   }
 }
