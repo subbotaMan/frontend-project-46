@@ -31,5 +31,3 @@ export default (filepath) => {
   const ext = path.extname(filepath)
   return parse(data, ext)
 }
-
-// node gendiff.js ./__fixtures__/file1.yaml ./__fixtures__/file2.yaml
