@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander'
 import parseFile from './src/parsers.js'
-import formatter from './src/formatter.js'
+import { stylish } from './src/formatter.js'
 
 const program = new Command()
 
@@ -10,12 +10,12 @@ program
   .description('Compares two configuration files and shows a difference.')
   .version('0.0.1', '-V, --version', 'output the version number')
   .helpOption('-h, --help', 'display help for command')
-  .option('-f, --format [type]', 'output format')
-  .arguments('<filepath1> <filepath2>', 'paths')
+  .option('-f, --format [type]', 'output format', 'stylish')
+  .arguments('<filepath1> <filepath2>')
   .action((filepath1, filepath2) => {
     const data1 = parseFile(filepath1)
     const data2 = parseFile(filepath2)
-    console.log(formatter(data1, data2))
+    console.log(stylish(data1, data2))
   })
 
 program.parse(process.argv)

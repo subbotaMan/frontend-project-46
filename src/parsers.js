@@ -2,14 +2,9 @@ import fs from 'fs'
 import path from 'path'
 import yaml from 'js-yaml' // Парсер для YAML
 
-// path.resolve - Сборка абсолютного пути файла
-// process.cwd() - Текущая рабочая директория
-// fs.readFileSync - Синхронное чтение файла
-// path.extname - Получение расширения файла
-
 const getData = (filepath) => {
-  const absolutePath = path.resolve(process.cwd(), filepath)
-  return fs.readFileSync(absolutePath, 'utf-8')
+  const absolutePath = path.resolve(process.cwd(), filepath) // path.resolve - Сборка абсолютного пути файла // process.cwd() - Текущая рабочая директория
+  return fs.readFileSync(absolutePath, 'utf-8') // fs.readFileSync - Синхронное чтение файла
 }
 
 const parse = (data, ext) => {
@@ -28,6 +23,6 @@ const parse = (data, ext) => {
 
 export default (filepath) => {
   const data = getData(filepath)
-  const ext = path.extname(filepath)
+  const ext = path.extname(filepath) // path.extname - Получение расширения файла
   return parse(data, ext)
 }
