@@ -8,3 +8,10 @@ publish: # Публикация на npm
 
 lint: # Проверка на ошибки
 	npx eslint . 
+
+test: # Запуск тестов
+	npm test
+
+test-coverage: # Запуск тестов с покрытием
+	npm test -- --coverage --coverageProvider=v8
+

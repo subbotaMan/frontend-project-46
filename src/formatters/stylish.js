@@ -1,4 +1,4 @@
-import buildTree from './buildTree.js'
+import buildTree from '../buildTree.js'
 
 const getIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2)
 const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat((depth - 1) * spacesCount)
@@ -62,25 +62,4 @@ ${lines.join('\n')}
 }`
 }
 
-const formatter = (obj1, obj2) => {
-  const keys = Array.from(new Set([...Object.keys(obj1), ...Object.keys(obj2)])).sort()
-  const lines = keys.flatMap((key) => {
-    if (!(key in obj2)) {
-      return `  - ${key}: ${obj1[key]}`
-    }
-    if (!(key in obj1)) {
-      return `  + ${key}: ${obj2[key]}`
-    }
-    if (obj1[key] !== obj2[key]) {
-      return [`  - ${key}: ${obj1[key]}`, `  + ${key}: ${obj2[key]}`]
-    }
-    return `    ${key}: ${obj1[key]}`
-  })
-
-  return `{
-${lines.join('\n')}
-}`
-}
-
-export { stylish }
-export default formatter
+export default stylish

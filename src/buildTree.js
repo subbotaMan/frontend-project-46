@@ -1,3 +1,5 @@
+// Функция для построения дерева различий
+
 const buildTree = (obj1, obj2) => {
   const keys = Array.from(new Set([...Object.keys(obj1), ...Object.keys(obj2)])).sort()
 
