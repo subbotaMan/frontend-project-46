@@ -51,3 +51,5 @@ https://asciinema.org/a/eyud8oBzFwFnfzCCA9u8ssey7
 
 ### SonarQube
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=subbotaMan_frontend-project-46&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=subbotaMan_frontend-project-46)
+
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=subbotaMan_frontend-project-46)](https://sonarcloud.io/summary/new_code?id=subbotaMan_frontend-project-46)
