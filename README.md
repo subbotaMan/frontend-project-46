@@ -5,6 +5,11 @@ A command-line utility for comparing configuration files in JSON and YAML format
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/subbotaMan/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/subbotaMan/frontend-project-46/actions)
 
+### SonarQube
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=subbotaMan_frontend-project-46&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=subbotaMan_frontend-project-46)
+
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=subbotaMan_frontend-project-46)](https://sonarcloud.io/summary/new_code?id=subbotaMan_frontend-project-46)
+
 ## Installation
 
 ```bash
@@ -49,7 +54,3 @@ https://asciinema.org/a/qi37zk8SblU72QurtlulwJ5lI
 ### Working with json formatter
 https://asciinema.org/a/eyud8oBzFwFnfzCCA9u8ssey7
 
-### SonarQube
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=subbotaMan_frontend-project-46&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=subbotaMan_frontend-project-46)
-
-[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=subbotaMan_frontend-project-46)](https://sonarcloud.io/summary/new_code?id=subbotaMan_frontend-project-46)

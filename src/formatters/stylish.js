@@ -1,7 +1,7 @@
 import buildTree from '../buildTree.js'
 
 const getIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2)
-const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat(Math.max(0, (depth - 1) * spacesCount - 2))
+const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat((depth - 1) * spacesCount - 2)
 
 const formatValue = (value, depth) => {
   if (typeof value !== 'object' || value === null) {
