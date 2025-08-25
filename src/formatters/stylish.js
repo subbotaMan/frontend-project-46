@@ -2,9 +2,9 @@ import buildTree from '../buildTree.js'
 
 const getIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2)
 
-const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2)
-// ИЛИ просто используйте ту же функцию
-// const getBracketIndent = getIndent;
+const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount)
+// ИЛИ
+// const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat(getIndent(depth, spacesCount).length + 2);
 
 const formatValue = (value, depth) => {
   if (typeof value !== 'object' || value === null) {
@@ -47,7 +47,7 @@ const formatNode = (node, depth = 1) => {
       return [
         `${indent}  ${node.key}: {`,
         ...children,
-        `${bracketIndent}}`, // УБЕРИТЕ пробелы перед } - должно быть просто }
+        `${bracketIndent}}`,
       ]
     }
     default:
