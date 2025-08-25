@@ -23,9 +23,11 @@ const getIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2
 //   return ' '.repeat((depth - 1) * 2)
 // }
 
-const getBracketIndent = (depth, spacesCount = 4) => {
-  return ' '.repeat(getIndent(depth, spacesCount).length - 2)
-}
+// const getBracketIndent = (depth, spacesCount = 4) => {
+//   return ' '.repeat(getIndent(depth, spacesCount).length)
+// }
+
+const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2)
 
 const formatValue = (value, depth) => {
   if (typeof value !== 'object' || value === null) {
