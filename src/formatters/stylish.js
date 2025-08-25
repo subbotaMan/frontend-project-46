@@ -1,33 +1,8 @@
 import buildTree from '../buildTree.js'
 
 const getIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2)
-// 1. const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat((depth - 1) * spacesCount - 2)
-// 2. const getBracketIndent = (depth, spacesCount = 4) => {
-//   if (depth < 1 || !Number.isInteger(depth)) {
-//     return ''
-//   }
 
-//   const indent = (depth - 1) * spacesCount - 2
-//   return indent > 0 ? ' '.repeat(indent) : ''
-// }
-// 3. const getBracketIndent = (depth, spacesCount = 4) => {
-//   if (depth < 1 || !Number.isInteger(depth)) {
-//     return ''
-//   }
-//   return ' '.repeat((depth - 1) * spacesCount)
-// }
-// 4. const getBracketIndent = (depth) => {
-//   if (depth < 1 || !Number.isInteger(depth)) {
-//     return ''
-//   }
-//   return ' '.repeat((depth - 1) * 2)
-// }
-
-// const getBracketIndent = (depth, spacesCount = 4) => {
-//   return ' '.repeat(getIndent(depth, spacesCount).length)
-// }
-
-const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2)
+const getBracketIndent = (depth, spacesCount = 4) => ' '.repeat((depth - 1) * spacesCount)
 
 const formatValue = (value, depth) => {
   if (typeof value !== 'object' || value === null) {
@@ -36,7 +11,6 @@ const formatValue = (value, depth) => {
   }
 
   const entries = Object.entries(value)
-
   const lines = entries.map(([key, val]) => {
     const formatted = formatValue(val, depth + 1)
     if (formatted === '') {
@@ -66,14 +40,6 @@ const formatNode = (node, depth = 1) => {
         `${indent}- ${node.key}: ${formatValue(node.value1, depth)}`,
         `${indent}+ ${node.key}: ${formatValue(node.value2, depth)}`,
       ]
-    // case 'nested': {
-    //   const children = node.children.map(child => formatNode(child, depth + 1)).flat()
-    //   return [
-    //     `${indent}  ${node.key}: {`,
-    //     ...children,
-    //     `${bracketIndent}  }`,
-    //   ]
-    // }
     case 'nested': {
       const children = node.children.map(child => formatNode(child, depth + 1)).flat()
       return [
