@@ -16,11 +16,17 @@ const getIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2
 //   }
 //   return ' '.repeat((depth - 1) * spacesCount)
 // }
+// 4. const getBracketIndent = (depth) => {
+//   if (depth < 1 || !Number.isInteger(depth)) {
+//     return ''
+//   }
+//   return ' '.repeat((depth - 1) * 2)
+// }
 const getBracketIndent = (depth) => {
   if (depth < 1 || !Number.isInteger(depth)) {
     return ''
   }
-  return ' '.repeat((depth - 1) * 2)
+  return ' '.repeat(depth * 2) // или depth * spacesCount / 2
 }
 
 const formatValue = (value, depth) => {
