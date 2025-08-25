@@ -22,11 +22,9 @@ const getIndent = (depth, spacesCount = 4) => ' '.repeat(depth * spacesCount - 2
 //   }
 //   return ' '.repeat((depth - 1) * 2)
 // }
-const getBracketIndent = (depth) => {
-  if (depth < 1 || !Number.isInteger(depth)) {
-    return ''
-  }
-  return ' '.repeat(depth * 2) // или depth * spacesCount / 2
+
+const getBracketIndent = (depth, spacesCount = 4) => {
+  return ' '.repeat(getIndent(depth, spacesCount).length - 2)
 }
 
 const formatValue = (value, depth) => {
@@ -66,12 +64,20 @@ const formatNode = (node, depth = 1) => {
         `${indent}- ${node.key}: ${formatValue(node.value1, depth)}`,
         `${indent}+ ${node.key}: ${formatValue(node.value2, depth)}`,
       ]
+    // case 'nested': {
+    //   const children = node.children.map(child => formatNode(child, depth + 1)).flat()
+    //   return [
+    //     `${indent}  ${node.key}: {`,
+    //     ...children,
+    //     `${bracketIndent}  }`,
+    //   ]
+    // }
     case 'nested': {
       const children = node.children.map(child => formatNode(child, depth + 1)).flat()
       return [
         `${indent}  ${node.key}: {`,
         ...children,
-        `${bracketIndent}  }`,
+        `${bracketIndent}}`,
       ]
     }
     default:
