@@ -4,6 +4,9 @@
 ### Git Actions:
 [![hexlet-check](https://github.com/subbotaMan/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/subbotaMan/frontend-project-46/actions/workflows/hexlet-check.yml)
 
+### SonarQube:
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=subbotaMan_frontend-project-462&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=subbotaMan_frontend-project-462)
+
 # Gendiff
 
 A command-line utility for comparing configuration files in JSON and YAML formats.
