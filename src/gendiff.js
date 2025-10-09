@@ -5,10 +5,10 @@ import parse from './parsers.js'
 import format from './formatters/index.js'
 
 const getData = (filePath) => {
-  const format = path.extname(filePath).slice(1)
+  const fileFormat = path.extname(filePath).slice(1)
   const data = fs.readFileSync(filePath, 'utf-8')
 
-  return parse(data, format)
+  return parse(data, fileFormat)
 }
 
 const gendiff = (filePath1, filePath2, formatType = 'stylish') => {
