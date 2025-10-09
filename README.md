@@ -7,32 +7,34 @@
 ### SonarQube:
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=subbotaMan_frontend-project-462&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=subbotaMan_frontend-project-462)
 
-Gendiff - это консольная утилита для сравнения конфигурационных файлов в форматах JSON и YAML. Программа определяет различия между двумя файлами и выводит результат в выбранном формате.
 
-Установка
+
+##### Gendiff - это консольная утилита для сравнения конфигурационных файлов в форматах JSON и YAML. Программа определяет различия между двумя файлами и выводит результат в выбранном формате.
+
+### Установка
 npm install
 
-Использование
+### Использование
 
-Базовое использование
+### Базовое использование
 bash
 gendiff filepath1.json filepath2.json
 gendiff filepath1.yaml filepath2.yaml
 
-С указанием формата вывода
+### С указанием формата вывода
 bash
 gendiff --format stylish filepath1.json filepath2.json
 gendiff --format plain filepath1.json filepath2.json
 gendiff --format json filepath1.json filepath2.json
 
-Короткая версия опций
+### Короткая версия опций
 bash
 gendiff -f stylish filepath1.json filepath2.json
 gendiff -f plain filepath1.yaml filepath2.yaml
 gendiff -f json filepath1.json filepath2.json
 
-Форматы вывода
-1. Stylish (по умолчанию)
+### Форматы вывода
+### 1. Stylish (по умолчанию)
 Человеко-читаемый формат с индикаторами + и - для добавленных и удаленных свойств.
 
 Пример вывода:
@@ -51,7 +53,7 @@ text
     }
 }
 
-2. Plain
+### 2. Plain
 Простой текстовый формат, описывающий изменения в виде списка.
 
 Пример вывода:
@@ -62,7 +64,7 @@ Property 'common.setting2' was removed
 Property 'common.setting3' was updated. From true to [complex value]
 Property 'common.setting4' was added with value: 'blah blah'
 
-3. JSON
+### 3. JSON
 Структурированный JSON формат для программного использования.
 
 Пример вывода:
@@ -81,25 +83,26 @@ json
   }
 ]
 
-Поддерживаемые форматы файлов
+### Поддерживаемые форматы файлов
 JSON (.json)
 
 YAML (.yaml, .yml)
 
-Опции командной строки
+### Опции командной строки
 -V, --version - вывести версию программы
 
 -f, --format <type> - установить формат вывода (stylish, plain, json)
 
 -h, --help - вывести справку по использованию
 
-Примеры:
-Сравнение JSON файлов
+### Примеры:
+
+### Сравнение JSON файлов
 bash
 gendiff file1.json file2.json
 gendiff --format plain file1.json file2.json
 
-Сравнение YAML файлов
+### Сравнение YAML файлов
 bash
 gendiff config1.yaml config2.yaml
 gendiff -f json config1.yml config2.yml
