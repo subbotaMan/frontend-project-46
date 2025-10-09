@@ -1,0 +1,27 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "Compares two configuration files and shows a difference",
+  "main": "gendiff.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subbotaMan/frontend-project-46.git"
+  },
+  "author": "subbotaMan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subbotaMan/frontend-project-46/issues"
+  },
+  "homepage": "https://github.com/subbotaMan/frontend-project-46#readme",
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^5.4.0",
+    "commander": "^14.0.1",
+    "eslint": "^9.37.0",
+    "globals": "^16.4.0",
+    "js-yaml": "^4.1.0"
+  }
+}
