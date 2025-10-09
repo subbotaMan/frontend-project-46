@@ -1,6 +1,9 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/subbotaMan/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/subbotaMan/frontend-project-46/actions)
 
+### Git Actions:
+[![hexlet-check](https://github.com/subbotaMan/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/subbotaMan/frontend-project-46/actions/workflows/hexlet-check.yml)
+
 # Gendiff
 
 A command-line utility for comparing configuration files in JSON and YAML formats.
